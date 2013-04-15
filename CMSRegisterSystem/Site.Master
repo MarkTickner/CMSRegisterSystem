@@ -1,0 +1,98 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CMSRegisterSystem.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+        <div class="page">
+            <div class="header" id="header" runat="server" style="text-align: center">
+                <img alt="Learn-On-Line (LOL)" style="width: 958px; height: 101px;" src="Styles/banner.png" />
+                <div class="clear hideSkiplink" id="nav_bg" runat="server">
+                    <!-- User specific navigation menus start -->
+                    <div id="loggedOutNavigationDiv" runat="server" visible="False">
+                        <asp:Menu ID="loggedOutNavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                            </Items>
+                        </asp:Menu>
+                    </div>
+                    <div id="studentNavigationDiv" runat="server" visible="False">
+                        <asp:Menu ID="studentNavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                                <asp:MenuItem NavigateUrl="~/ViewOwnPastAttendance.aspx" Text="View Own Attendance" Value="View Own Attendance"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/NotifyOfAbsence.aspx" Text="Notify Of Absence"
+                                    Value="Notify Of Absence"></asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                    </div>
+                    <div id="staffCourseCoordinatorNavigationDiv" runat="server" visible="False">
+                        <asp:Menu ID="staffCourseCoordinatorNavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                                <asp:MenuItem NavigateUrl="~/RecordAttendance.aspx" Text="Record Attendance" Value="Record Attendance">
+                                    <asp:MenuItem NavigateUrl="~/EditRegister.aspx" Text="Edit Attendance" Value="Edit Attendance"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/AuthoriseNotifiedAbsence.aspx" Text="Authorise Absences" Value="Authorise Absences"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/MaintainLists.aspx" Text="Assign Student" Value="Assign Student"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/AssociateStaff.aspx" Text="Associate Staff" Value="Associate Staff"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/UnregisteredStudent.aspx" Text="Add Unregistered Student" Value="Add Unregistered Student"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Delete.aspx" Text="Delete Records" Value="Delete Records"></asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                    </div>
+                    <div id="staffTutorNavigationDiv" runat="server" visible="False">
+                        <asp:Menu ID="staffTutorNavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                                <asp:MenuItem NavigateUrl="~/RecordAttendance.aspx" Text="Record Attendance" Value="Record Attendance">
+                                    <asp:MenuItem NavigateUrl="~/EditRegister.aspx" Text="Edit Attendance" Value="Edit Attendance"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/AuthoriseNotifiedAbsence.aspx" Text="Authorise Absences" Value="Authorise Absences"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/CourseAttendance.aspx"
+                                    Text="View Attendance Statistics" Value="View Attendance Statistics"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/StudentAttendance.aspx" Text="View Individual Attendance Records" Value="View Individual Attendance Records"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Delete.aspx" Text="Delete Records" Value="Delete Records"></asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                    </div>
+                    <div id="staffManagerNavigationDiv" runat="server" visible="False">
+                        <asp:Menu ID="staffManagerNavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                                <asp:MenuItem NavigateUrl="~/CourseAttendance.aspx" Text="View Attendance Statistics" Value="View Attendance Statistics"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/StudentAttendance.aspx" Text="View Individual Attendance Records" Value="View Individual Attendance Records"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Delete.aspx" Text="Delete Records" Value="Delete Records"></asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                    </div>
+                    <div id="staffAdminNavigationDiv" runat="server" visible="False">
+                        <asp:Menu ID="staffAdminNavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                                <asp:MenuItem NavigateUrl="~/CourseAttendance.aspx" Text="View Attendance Statistics" Value="View Attendance Statistics"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/StudentAttendance.aspx" Text="View Individual Attendance Records" Value="View Individual Attendance Records"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Delete.aspx" Text="Delete Records" Value="Delete Records"></asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                    </div>
+                    <!-- User specific navigation menus end -->
+                </div>
+            </div>
+            <div class="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="footer">
+        </div>
+    </form>
+</body>
+</html>
